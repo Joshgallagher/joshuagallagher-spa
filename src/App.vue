@@ -13,6 +13,9 @@
 <style lang="sass">
   @import '~sass/main'
 
+  *
+    box-sizing: border-box
+
   body
     font-family: 'Brandon Grotesque', Helvetica, Arial, sans-serif
     -webkit-font-smoothing: antialiased

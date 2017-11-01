@@ -25,12 +25,11 @@
     justify-content: center
     width: 100%
     height: 100px
-    padding: 0 50px
     background: $blue
     &__content
       display: flex
       align-items: center
-      width: 100%
+      width: 90%
       max-width: 1600px
       height: inherit
       font-size: 14px

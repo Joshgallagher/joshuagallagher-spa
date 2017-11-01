@@ -25,13 +25,12 @@
     align-items: center
     flex-direction: column
     width: 100%
-    padding: 0 50px
     background: white
     &__image
       display: flex
       align-items: center
       justify-content: center
-      width: 100%
+      width: 90%
       max-width: 1600px
       height: 350px
       background-image: linear-gradient(180deg, rgba($blue, .75), rgba($blue, .75)), url("../../../assets/img/mycity.png")
@@ -49,7 +48,7 @@
       font-size: 28px
     &__paragraph
       margin: 0 0 50px 0
-      line-height: 2
+      line-height: 1.8
       &:last-child
         margin-bottom: 0
     &__paragraph--link

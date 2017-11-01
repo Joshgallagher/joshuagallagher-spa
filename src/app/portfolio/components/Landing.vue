@@ -24,7 +24,7 @@
     color: $text
     font-size: 80px
     font-weight: bold
-    line-height: 1.6
+    line-height: 1.4
     &--highlighted
       color: $blue
 </style>

@@ -1,5 +1,16 @@
 <template>
-  <p>About</p>
+  <div class="about">
+    <div class="about__image"></div>
+    <div class="about__text">
+      <p class="about__paragraph">Hi, I’m Joshua Gallagher. I’m a web designer, developer and student.
+</p>
+      <p class="about__paragraph">I am currently studying for my degree in Computer Science at <a href="#" class="about__paragraph--highlight">Aston University</a> and have successfully completed my first year with a 2:1 degree classification.
+</p>
+      <p class="about__paragraph">I am a self-taught designer and developer and specialise in web technologies. I am proffecient in Java, PHP, JavaScript and SQL. Also, have knowledge in various frameworks such as Laravel, Lumen, Vue.js and ReactJS.
+</p>
+      <p class="about__paragraph">I will be available next year for a placement, so <a href="#" class="about__paragraph--highlight">hire me</a>… duh!</p>
+    </div>
+  </div>
 </template>
 <script>
   export default {
@@ -8,4 +19,37 @@
 </script>
 <style lang="sass">
   @import '~sass/main'
+
+  .about
+    display: flex
+    justify-content: center
+    flex-direction: column
+    width: 100%
+    padding: 0 50px
+    &__image
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      max-width: 1600px
+      height: 350px
+      margin: 0 auto
+      background-image: linear-gradient(180deg, rgba($blue, .4), rgba($blue, .4)), url("../../../assets/img/mycity.png")
+      background-position: 50% 50%
+      background-repeat: no-repeat
+      background-size: cover
+      border-radius: 6px
+    &__text
+      width: 100%
+      max-width: 960px
+      margin: 100px auto 0
+    &__paragraph
+      margin: 0 0 50px 0
+      padding: 0
+      line-height: 1.8
+      color: $text
+      font-size: 28px
+    &__paragraph--highlight
+      text-decoration: none
+      color: $blue
 </style>

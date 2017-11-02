@@ -1,5 +1,5 @@
 <template>
-  <p>project</p>
+  <p>Projects</p>
 </template>
 <script>
   export default {

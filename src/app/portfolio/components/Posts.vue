@@ -1,5 +1,5 @@
 <template>
-  <p>posts</p>
+  <p>Posts</p>
 </template>
 <script>
   export default {

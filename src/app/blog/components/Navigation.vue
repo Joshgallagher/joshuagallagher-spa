@@ -1,11 +1,11 @@
 <template>
-  <nav class="pnav">
-    <div class="pnav__container">
-      <router-link :to="{ name: 'portfolio' }" class="pnav__logo">
+  <nav class="bnav">
+    <div class="bnav__container">
+      <router-link :to="{ name: 'portfolio' }" class="bnav__logo">
         <logo></logo>
       </router-link>
-      <div class="pnav__links">
-        <router-link :to="{ name: 'blog' }" class="button button--blue">blog</router-link>
+      <div class="bnav__links">
+        <router-link :to="{ name: 'portfolio' }" class="button button--blue">portfolio</router-link>
       </div>
     </div>
   </nav>
@@ -23,7 +23,7 @@
 <style lang="sass">
   @import '~sass/main'
 
-  .pnav
+  .bnav
     display: flex
     justify-content: center
     width: 100%

@@ -3,9 +3,9 @@
     <div class="footer__container">
       <p class="footer__cpr">©2017 Joshua Gallagher, All Rights Reserved.</p>
       <div class="footer__links">
-        <a href="#" class="footer__link">GitHub</a>
-        <a href="#" class="footer__link">LinkedIn</a>
-        <a href="#" class="footer__link">Blog</a>
+        <a href="https://github.com/Joshgallagher" target="blank" class="footer__link">GitHub</a>
+        <a href="https://www.linkedin.com/in/joshua-gallagher-616653127" target="blank" class="footer__link">LinkedIn</a>
+        <router-link :to="{name: 'blog' }" class="footer__link">Blog</router-link>
       </div>
     </div>
   </footer>
@@ -49,7 +49,6 @@
       color: white
       font-size: 12px
       font-weight: 700
-      font-style: italic
       font-family: 'Merriweather', serif
       &:last-child
         margin-right: 0

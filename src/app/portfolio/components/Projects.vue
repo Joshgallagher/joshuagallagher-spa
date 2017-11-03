@@ -53,7 +53,7 @@
       color: $text
       font-size: 35px
       font-weight: 700
-      font-family: 'Merriweather', serif;
+      font-family: 'Merriweather', serif
     &__heading--highlight
       color: $blue
     &__list

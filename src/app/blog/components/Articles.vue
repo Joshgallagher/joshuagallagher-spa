@@ -1,37 +1,33 @@
 <template>
-  <div class="posts">
-    <h2 class="posts__heading">Check out my <span class="posts__heading--highlight">blog</span> where I post tech guides and the odd off topic post.</h2>
+    <div class="posts">
     <div class="posts__list">
       <div class="post">
         <div class="post__type">29/09/17<span>·</span>By Joshua Gallagher</div>
-        <div class="post__head">
-          <a href="#" class="post__name">Lumen with Laravel JWT</a>
-          <div class="post__tag post__tag">Blog Post</div>
-        </div>
+        <a href="#" class="post__name post__name--pink">Lumen with Laravel JWT</a>
         <p class="post__info">Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.</p>
       </div>
       <div class="post">
         <div class="post__type">23/09/17<span>·</span>By Joshua Gallagher</div>
-        <div class="post__head">
-          <a href="#" class="post__name">Lumen: Password Resets</a>
-          <div class="post__tag post__tag">Blog Post</div>
-        </div>
+        <a href="#" class="post__name post__name--green">Lumen: Password Resets</a>
         <p class="post__info">Nulla dictum maximus tortor ac tempor. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum. Etiam vel erat ante. Etiam in tellus nunc. Ut ut neque est. Etiam ullamcorper justo ut tellus fermentum, eget suscipit lectus viverra.</p>
       </div>
-      <div class="post--last">
+      <div class="post">
+        <div class="post__type">17/09/17<span>·</span>By Joshua Gallagher</div>
+        <a href="#" class="post__name post__name--blue">Fractal with Lumen</a>
+        <p class="post__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum.</p>
+      </div>
+      <div class="post">
         <div class="post__type">11/09/17<span>·</span>By Joshua Gallagher</div>
-        <div class="post__head">
-          <a href="#" class="post__name">Hello, World!</a>
-          <div class="post__tag post__tag">Blog Post</div>
-        </div>
+        <a href="#" class="post__name post__name--purple">Hello, World!</a>
         <p class="post__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat.</p>
       </div>
+      <a href="#" class="posts__load">Load More</a>
     </div>
   </div>
 </template>
 <script>
   export default {
-    name: 'posts'
+    name: 'articles'
   }
 </script>
 <style lang="sass">
@@ -42,32 +38,26 @@
     align-items: center
     flex-direction: column
     width: 100%
+    margin: 100px 0
     padding: 0 50px
-    &__heading
-      width: 100%
-      max-width: 800px
-      margin: 0 auto 50px
-      line-height: 55px
-      color: $text
-      font-size: 35px
-      font-weight: 700
-      font-family: 'Merriweather', serif;
-    &__heading--highlight
-      color: $blue
     &__list
+      display: flex
+      flex-direction: column
+      align-items: center
       width: 100%
       max-width: 800px
-    &__hr
-      width: 100px
-      height: 1px
-      margin: 75px 0
-      background-color: $line
+    &__load
+      display: flex
+      margin: 50px 0 0 0
+      text-decoration: none
+      color: $text
+      font-size: 12px
+      font-weight: 700
+      font-family: 'Merriweather', serif
   .post
     display: flex
     flex-direction: column
     margin-bottom: 50px
-    &--last
-      margin-bottom: 0
     &__type
       color: $text
       font-size: 14px
@@ -75,13 +65,8 @@
       font-family: Merriweather, serif;
       span
         margin: 0 10px
-    &__head
-      display: flex
-      align-items: center
-      flex-direction: row
-      margin: 20px 0
     &__name
-      margin: 0
+      margin: 20px 0
       line-height: 35px
       text-decoration: none
       color: $text
@@ -89,21 +74,22 @@
       font-weight: 700
       font-family: Merriweather, serif
       transition: 250ms color ease-in-out
-      &:hover
+      &--blue
         color: $blue
-    &__tag
-      min-width: 100px
-      margin-left: 20px
-      padding: 3px 7px
-      line-height: 20px
-      text-align: center
-      text-transform: uppercase
-      color: #fff
-      font-size: 11px
-      font-weight: 600
-      font-family: Montserrat, sans-serif
-      border-radius: 3px
-      background-color: $purple
+        &:hover
+          color: $dblue
+      &--pink
+        color: $pink
+        &:hover
+          color: $dpink
+      &--purple
+        color: $purple
+        &:hover
+          color: $dpurple
+      &--green
+        color: $green
+        &:hover
+          color: $dgreen
     &__info
       margin: 0
       line-height: 38px

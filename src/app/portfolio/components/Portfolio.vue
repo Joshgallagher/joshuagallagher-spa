@@ -6,6 +6,7 @@
     <projects></projects>
     <posts></posts>
     <contact></contact>
+
     <page-end></page-end>
   </div>
 </template>

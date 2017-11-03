@@ -24,7 +24,7 @@
       color: $text
       font-size: 60px
       font-weight: 700
-      font-family: 'Merriweather', serif;
+      font-family: 'Merriweather', serif
     &__heading--highlight
       text-decoration: none
       color: $blue

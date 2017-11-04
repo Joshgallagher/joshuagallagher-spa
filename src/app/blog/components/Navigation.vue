@@ -1,7 +1,7 @@
 <template>
   <nav class="bnav">
     <div class="bnav__container">
-      <router-link :to="{ name: 'portfolio' }" class="bnav__logo">
+      <router-link :to="{ name: 'blog' }" class="bnav__logo">
         <logo></logo>
       </router-link>
       <div class="bnav__links">

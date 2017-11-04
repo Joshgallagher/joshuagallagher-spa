@@ -1,27 +1,27 @@
 <template>
-    <div class="posts">
-    <div class="posts__list">
-      <div class="post">
-        <div class="post__type">29/09/17<span>·</span>By Joshua Gallagher</div>
-        <a href="#" class="post__name post__name--pink">Lumen with Laravel JWT</a>
-        <p class="post__info">Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.</p>
+    <div class="articles">
+    <div class="articles__list">
+      <div class="article">
+        <div class="article__type">29/09/17<span>·</span>By Joshua Gallagher</div>
+        <a href="#" class="article__name article__name--pink">Lumen with Laravel JWT</a>
+        <p class="article__info">Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.</p>
       </div>
-      <div class="post">
-        <div class="post__type">23/09/17<span>·</span>By Joshua Gallagher</div>
-        <a href="#" class="post__name post__name--green">Lumen: Password Resets</a>
-        <p class="post__info">Nulla dictum maximus tortor ac tempor. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum. Etiam vel erat ante. Etiam in tellus nunc. Ut ut neque est. Etiam ullamcorper justo ut tellus fermentum, eget suscipit lectus viverra.</p>
+      <div class="article">
+        <div class="article__type">23/09/17<span>·</span>By Joshua Gallagher</div>
+        <a href="#" class="article__name article__name--green">Lumen: Password Resets</a>
+        <p class="article__info">Nulla dictum maximus tortor ac tempor. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum. Etiam vel erat ante. Etiam in tellus nunc. Ut ut neque est. Etiam ullamcorper justo ut tellus fermentum, eget suscipit lectus viverra.</p>
       </div>
-      <div class="post">
-        <div class="post__type">17/09/17<span>·</span>By Joshua Gallagher</div>
-        <a href="#" class="post__name post__name--blue">Fractal with Lumen</a>
-        <p class="post__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum.</p>
+      <div class="article">
+        <div class="article__type">17/09/17<span>·</span>By Joshua Gallagher</div>
+        <a href="#" class="article__name article__name--blue">Fractal with Lumen</a>
+        <p class="article__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum.</p>
       </div>
-      <div class="post">
-        <div class="post__type">11/09/17<span>·</span>By Joshua Gallagher</div>
-        <a href="#" class="post__name post__name--purple">Hello, World!</a>
-        <p class="post__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat.</p>
+      <div class="article">
+        <div class="article__type">11/09/17<span>·</span>By Joshua Gallagher</div>
+        <a href="#" class="article__name article__name--purple">Hello, World!</a>
+        <p class="article__info">Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat.</p>
       </div>
-      <a href="#" class="posts__load">Load More</a>
+      <a href="#" class="articles__load">Load More</a>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@
 <style lang="sass">
   @import '~sass/main'
 
-  .posts
+  .articles
     display: flex
     align-items: center
     flex-direction: column
@@ -54,7 +54,7 @@
       font-size: 12px
       font-weight: 700
       font-family: 'Merriweather', serif
-  .post
+  .article
     display: flex
     flex-direction: column
     margin-bottom: 50px

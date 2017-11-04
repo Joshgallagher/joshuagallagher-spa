@@ -16,7 +16,7 @@
     display: flex
     align-items: center
     flex-direction: column
-    margin: 100px 0 0 0
+    margin: 100px 0
     padding: 0 50px
     &__heading
       width: 100%

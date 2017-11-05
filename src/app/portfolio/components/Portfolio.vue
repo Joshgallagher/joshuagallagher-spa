@@ -23,19 +23,19 @@
     <div class="portfolio__projects">
       <h2 class="portfolio__projects-heading">Here are some <span class="portfolio__projects-heading--highlight">projects</span> I’ve launched or currently working on.</h2>
       <div class="portfolio__projects-list">
-        <project v-for="(project, index) in projects.wip" :project="project" :key="project.id" :index="index" :length="projects.wip.length"></project>
+        <project-item v-for="(project, index) in projects.wip" :project="project" :key="project.id" :index="index" :length="projects.wip.length"></project-item>
       </div>
       <div class="portfolio__projects-hr">
         <span></span>
       </div>
       <div class="portfolio__projects-list portfolio__projects-list--starting-soon">
-        <project v-for="(project, index) in projects.coming" :project="project" :key="project.id" :index="index" :length="projects.coming.length"></project>
+        <project-item v-for="(project, index) in projects.coming" :project="project" :key="project.id" :index="index" :length="projects.coming.length"></project-item>
       </div>
     </div>
     <div class="portfolio__posts">
       <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight">blog</span> where I post <span class="portfolio__posts-heading--highlight">coding tutorials</span> and talk about <span class="portfolio__posts-heading--highlight">comp sci</span>.</h2>
       <div class="portfolio__posts-list">
-        <post v-for="(post, index) in posts.posts" :post="post" :key="post.id" :index="index" :length="posts.posts.length"></post>
+        <post-item v-for="(post, index) in posts.posts" :post="post" :key="post.id" :index="index" :length="posts.posts.length"></post-item>
       </div>
     </div>
     <div class="portfolio__contact">
@@ -46,16 +46,16 @@
 </template>
 <script>
   import navigation from './Navigation'
-  import project from './Project'
-  import post from './Post'
+  import projectItem from './ProjectItem'
+  import postItem from './PostItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
   export default {
     name: 'portfolio',
     components: {
       navigation,
-      project,
-      post,
+      projectItem,
+      postItem,
       pageEnd
     },
     data () {

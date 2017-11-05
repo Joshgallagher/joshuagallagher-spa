@@ -1,18 +1,20 @@
 <template>
-  <div class="post" v-bind:class="{ 'post--last' : index + 1 === length }">
-    <div class="post__type">{{ post.date }}<span>·</span>By {{ post.author }}</div>
-    <div class="post__head">
-      <a href="#" class="post__name">{{ post.title }}</a>
-      <div class="post__tag post__tag">Blog Post</div>
+  <div class="project-item" v-bind:class="{ 'project-item--last' : index + 1 === length }">
+    <div class="project-item__type">{{ project.date }}<span>·</span>{{ project.platforms }}</div>
+    <div class="project-item__head">
+      <a href="#" class="project-item__name">{{ project.name }}</a>
+      <div class="project-item__tag project-item__tag--completed" v-if="project.status === 'Completed'">{{ project.status }}</div>
+      <div class="project-item__tag project-item__tag--ongoing" v-if="project.status === 'Ongoing'">{{ project.status }}</div>
+      <div class="project-item__tag project-item__tag--coming" v-else="">{{ project.status }}</div>
     </div>
-    <p class="post__info">{{ post.teaser }}</p>
+    <p class="project-item__info">{{ project.about }}</p>
   </div>
 </template>
 <script>
   export default {
-    name: 'post',
+    name: 'project-item',
     props: {
-      'post': {
+      'project': {
         type: Object,
         default: ''
       },
@@ -30,7 +32,7 @@
 <style lang="sass">
   @import '~sass/main'
 
-  .post
+  .project-item
     display: flex
     flex-direction: column
     margin-bottom: 50px
@@ -71,7 +73,13 @@
       font-weight: 600
       font-family: Montserrat, sans-serif
       border-radius: 3px
-      background-color: $purple
+      background-color: $blue
+    &__tag--ongoing
+      background-color: $blue
+    &__tag--completed
+      background-color: $green
+    &__tag--coming
+      background-color: $pink
     &__info
       margin: 0
       line-height: 38px

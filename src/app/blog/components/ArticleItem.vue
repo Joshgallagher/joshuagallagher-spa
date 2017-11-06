@@ -38,7 +38,9 @@
     },
     methods: {
       getTitleColor (index) {
-        return this.titleColors[index % this.titleColors.length]
+        let colorsArr = this.titleColors
+        let colorsArrLength = colorsArr.length
+        return colorsArr[index % colorsArrLength]
       }
     }
   }

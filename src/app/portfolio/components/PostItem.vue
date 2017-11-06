@@ -77,5 +77,5 @@
       line-height: 38px
       font-size: 20px
       font-weight: 300
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', sans-serif
 </style>

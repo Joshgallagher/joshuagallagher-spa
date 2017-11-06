@@ -1,8 +1,8 @@
 <template>
-  <div class="article">
-    <div class="article__type">{{ article.date }}<span>·</span>By {{ article.author }}</div>
-    <a href="#" class="article__title" v-bind:class=titleColors[index]>{{ article.title }}</a>
-    <p class="article__teaser" v-if="hasTeaser === true">{{ article.teaser }}</p>
+  <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length }">
+    <div class="article-item__type">{{ article.date }}<span>·</span>By {{ article.author }}</div>
+    <a href="#" class="article-item__title" v-bind:class="titleColors[index % titleColors.length]">{{ article.title }}</a>
+    <p class="article-item__teaser" v-if="hasTeaser">{{ article.teaser }}</p>
   </div>
 </template>
 <script>
@@ -29,10 +29,10 @@
     data () {
       return {
         titleColors: [
-          'article__title--green',
-          'article__title--pink',
-          'article__title--purple',
-          'article__title--blue'
+          'article-item__title--green',
+          'article-item__title--pink',
+          'article-item__title--purple',
+          'article-item__title--blue'
         ]
       }
     }
@@ -41,12 +41,17 @@
 <style lang="sass">
   @import '~sass/main'
 
-  .article
+  .article-item
     display: flex
     flex-direction: column
     width: 100%
     margin-bottom: 50px
+    &--no-teaser
+      margin-bottom: 20px
+    &--last
+      margin-bottom: 0
     &__type
+      width: 100%
       color: $text
       font-size: 14px
       font-weight: 400
@@ -54,6 +59,7 @@
       span
         margin: 0 10px
     &__title
+      width: 100%
       margin: 20px 0
       line-height: 35px
       text-decoration: none
@@ -79,9 +85,10 @@
         &:hover
           color: $dgreen
     &__teaser
+      width: 100%
       margin: 0
       line-height: 38px
       font-size: 20px
       font-weight: 300
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', sans-serif
 </style>

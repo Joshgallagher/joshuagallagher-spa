@@ -48,6 +48,13 @@
             },
             {
               'id': 3,
+              'title': 'Say Hello to Fractal!',
+              'date': '29/08/17',
+              'author': 'Joshua Gallagher',
+              'teaser': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo modi unde incidunt vitae, quae vel, dolorum quaerat fuga impedit cupiditate! Reiciendis pariatur qui, vel incidunt sint quisquam voluptatem soluta!'
+            },
+            {
+              'id': 4,
               'title': 'Hello, World!',
               'date': '29/08/17',
               'author': 'Joshua Gallagher',
@@ -93,7 +100,6 @@
       flex-direction: column
       width: 100%
       margin: 100px 0
-      padding: 0 50px
     &__articles-list
       display: flex
       flex-direction: column

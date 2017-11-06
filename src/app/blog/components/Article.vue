@@ -3,7 +3,7 @@
     <navigation></navigation>
     <div class="article__wrapper">
       <div class="article__header">
-        <h1 class="article__heading">Lumen with Laravel JWT</h1>
+        <h1 class="article__heading">Laravel Scout with Vue.js instant search</h1>
         <div class="article__info">29/08/17<span>·</span>By Joshua Gallagher</div>
       </div>
       <div class="article__content">
@@ -36,6 +36,8 @@ class UserTransformerTest extends TestCase
 }
 </pre>
         <p>Nunc sed dui eleifend, elementum dolor in, facilisis tortor. In blandit, mauris ut egestas dictum, arcu ipsum molestie ex, ac facilisis eros tellus ut justo. Nunc volutpat vestibulum enim sed viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce porttitor est eu erat facilisis tincidunt. Pellentesque maximus nisi eget eleifend commodo. Phasellus tincidunt, libero a facilisis viverra, nisl orci dapibus velit, a efficitur tortor magna eget tellus. Sed euismod quis ante vitae placerat. Vestibulum cursus urna non orci finibus, vitae vestibulum ex tincidunt.</p>
+        <pre>
+$userTransformer = new UserTransformer();</pre>
         <p>Pellentesque vitae luctus nunc. Nam justo leo, viverra ac ante at, luctus convallis nibh. Vivamus scelerisque ac magna eget interdum. Maecenas laoreet sollicitudin arcu, ac cursus lectus mattis id. Quisque massa turpis, elementum at ante lobortis, molestie egestas lectus. Vestibulum scelerisque metus nec magna imperdiet vulputate. Fusce at libero tellus. Pellentesque mollis maximus mi, a faucibus sem posuere vel. Vivamus placerat eget erat a lobortis. Quisque blandit nisi erat, sit amet scelerisque erat mattis non. Cras pellentesque semper egestas.</p>
         <p>Duis lobortis, lacus et consectetur pretium, justo urna accumsan ex, at eleifend nisl lectus id dolor. Nam eros urna, <code>pretium eu tellus sit amet</code>, vestibulum pretium arcu. Mauris scelerisque nisi ultricies, tincidunt ex sit amet, finibus ipsum. Suspendisse tempus malesuada augue eget rhoncus. Vivamus tristique convallis rhoncus. Duis rhoncus, nulla quis faucibus vestibulum, lacus turpis dapibus lacus, in semper lacus tellus ut urna. Integer nec risus id odio iaculis ultrices. Praesent efficitur lacus eu libero elementum, non rutrum urna mollis. Vivamus non ullamcorper leo. Fusce cursus ornare augue at gravida. Fusce sagittis dui eu massa commodo sagittis. Nullam at tellus condimentum, eleifend ex a, porta sem. Cras sapien arcu, fermentum non molestie id, vulputate nec ipsum. In in justo nec metus pretium rhoncus vel sed arcu.</p>
         <p>Nulla elementum non diam non volutpat. Vivamus dictum hendrerit aliquam. Maecenas nec metus turpis. Vestibulum ut porttitor neque, eu maximus augue. Proin lobortis euismod tempor. Etiam et felis eu nibh auctor vehicula sodales sed odio. Suspendisse fermentum cursus nulla, sit amet dignissim metus sagittis eget. Nullam iaculis mi id tellus blandit, et placerat quam rhoncus. Aliquam semper tortor mi. In fermentum ultrices vehicula. Morbi hendrerit cursus ligula et pretium. Sed libero urna, ultrices sed justo vitae, auctor tempor purus. Etiam augue velit, venenatis sed sagittis nec, sagittis eget ligula. Praesent porta lacus at libero euismod, hendrerit malesuada risus tincidunt. Nulla non velit mollis, luctus lectus a, consectetur nibh.</p>

@@ -1,7 +1,7 @@
 <template>
-  <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length }">
+  <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length && hasTeaser === false }">
     <div class="article-item__type">{{ article.date }}<span>·</span>By {{ article.author }}</div>
-    <a href="#" class="article-item__title" v-bind:class="getTitleColor(index)">{{ article.title }}</a>
+    <a href="#" class="article-item__title" v-bind:class="['article-item__title--' + getTitleColor(index), { 'article-item__title--last' : index + 1 === length && hasTeaser === false }]">{{ article.title }}</a>
     <p class="article-item__teaser" v-if="hasTeaser">{{ article.teaser }}</p>
   </div>
 </template>
@@ -29,10 +29,10 @@
     data () {
       return {
         titleColors: [
-          'article-item__title--green',
-          'article-item__title--pink',
-          'article-item__title--purple',
-          'article-item__title--blue'
+          'green',
+          'pink',
+          'purple',
+          'blue'
         ]
       }
     },
@@ -75,6 +75,8 @@
       font-weight: 700
       font-family: Merriweather, serif
       transition: 250ms color ease-in-out
+      &--last
+        margin-bottom: 0
       &--blue
         color: $blue
         &:hover

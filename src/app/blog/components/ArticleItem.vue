@@ -1,7 +1,7 @@
 <template>
   <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length }">
     <div class="article-item__type">{{ article.date }}<span>·</span>By {{ article.author }}</div>
-    <a href="#" class="article-item__title" v-bind:class="titleColors[index % titleColors.length]">{{ article.title }}</a>
+    <a href="#" class="article-item__title" v-bind:class="getTitleColor(index)">{{ article.title }}</a>
     <p class="article-item__teaser" v-if="hasTeaser">{{ article.teaser }}</p>
   </div>
 </template>
@@ -34,6 +34,11 @@
           'article-item__title--purple',
           'article-item__title--blue'
         ]
+      }
+    },
+    methods: {
+      getTitleColor (index) {
+        return this.titleColors[index % this.titleColors.length]
       }
     }
   }

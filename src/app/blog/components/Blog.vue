@@ -114,4 +114,7 @@
       font-size: 12px
       font-weight: 700
       font-family: 'Merriweather', serif
+      transition: 250ms color ease-in-out
+      &:hover
+        color: $blue
 </style>

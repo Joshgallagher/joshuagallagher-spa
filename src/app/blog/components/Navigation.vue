@@ -5,7 +5,8 @@
         <logo></logo>
       </router-link>
       <div class="bnav__links">
-        <router-link :to="{ name: 'portfolio' }" class="button button--blue">portfolio</router-link>
+        <router-link v-if="this.$route.name !== 'blog'" :to="{ name: 'blog' }" class="bnav__link">Posts</router-link>
+        <router-link :to="{ name: 'portfolio' }" class="button button--blue">Portfolio</router-link>
       </div>
     </div>
   </nav>
@@ -51,4 +52,14 @@
       margin: 0
       padding: 0
       list-style-type: none
+    &__link
+      margin-right: 50px
+      text-decoration: none
+      color: $text
+      font-size: 12px
+      font-weight: 700
+      font-family: 'Merriweather', serif
+      transition: 250ms color ease-in-out
+      &:hover
+        color: $blue
 </style>

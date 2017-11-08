@@ -1,6 +1,6 @@
 <template>
   <div class="post-item" v-bind:class="{ 'post-item--last' : index + 1 === length }">
-    <div class="post-item__type">{{ post.date }}<span>·</span>By {{ post.author }}</div>
+    <div class="post-item__type">{{ post.created_at }}<span>·</span>By {{ post.user.data.name }}</div>
     <div class="post-item__head">
       <a href="#" class="post-item__name">{{ post.title }}</a>
       <div class="post-item__tag post-item__tag">Blog Post</div>
@@ -56,6 +56,9 @@
       font-size: 28px
       font-weight: 700
       font-family: Merriweather, serif
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
       transition: 250ms color ease-in-out
       &:hover
         color: $blue

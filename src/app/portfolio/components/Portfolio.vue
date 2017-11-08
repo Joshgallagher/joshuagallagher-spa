@@ -35,7 +35,7 @@
     <div class="portfolio__posts">
       <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight">blog</span> where I post <span class="portfolio__posts-heading--highlight">coding tutorials</span> and talk about <span class="portfolio__posts-heading--highlight">comp sci</span>.</h2>
       <div class="portfolio__posts-list">
-        <post-item v-for="(post, index) in posts.posts" :post="post" :key="post.id" :index="index" :length="posts.posts.length"></post-item>
+        <post-item v-for="(post, index) in posts" :post="post" :key="post.id" :index="index" :length="posts.length"></post-item>
       </div>
     </div>
     <div class="portfolio__contact">
@@ -50,6 +50,8 @@
   import postItem from './PostItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
+  import { mapActions, mapGetters } from 'vuex'
+
   export default {
     name: 'portfolio',
     components: {
@@ -57,6 +59,19 @@
       projectItem,
       postItem,
       pageEnd
+    },
+    mounted () {
+      this.getPosts()
+    },
+    computed: {
+      ...mapGetters({
+        posts: 'portfolio/posts'
+      })
+    },
+    methods: {
+      ...mapActions({
+        getPosts: 'portfolio/getPosts'
+      })
     },
     data () {
       return {
@@ -87,31 +102,6 @@
               'date': 'October 2017',
               'platforms': 'Website | Android | iOS',
               'about': 'Sed dapibus sapien vel tortor euismod, a vehicula ligula congue. Nunc tortor nisi, dignissim at fermentum vitae, congue in est. Morbi elit enim, imperdiet vel. Nulla id quam pellentesque, dapibus velit quis, dapibus nulla.'
-            }
-          ]
-        },
-        posts: {
-          posts: [
-            {
-              'id': 1,
-              'title': 'Lumen with Laravel JWT',
-              'date': '29/08/17',
-              'author': 'Joshua Gallagher',
-              'teaser': 'Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.'
-            },
-            {
-              'id': 2,
-              'title': 'Lumen: Password Resets',
-              'date': '29/08/17',
-              'author': 'Joshua Gallagher',
-              'teaser': 'Nulla dictum maximus tortor ac tempor. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum. Etiam vel erat ante. Etiam in tellus nunc. Ut ut neque est. Etiam ullamcorper justo ut tellus fermentum, eget suscipit lectus viverra.'
-            },
-            {
-              'id': 3,
-              'title': 'Hello, World!',
-              'date': '29/08/17',
-              'author': 'Joshua Gallagher',
-              'teaser': 'Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat.'
             }
           ]
         }

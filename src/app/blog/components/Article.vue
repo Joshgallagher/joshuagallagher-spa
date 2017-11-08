@@ -211,7 +211,7 @@
         border-radius: 3px
       ul, ol
         margin-bottom: 25px
-        > li
+        li
           margin: 0 0 10px 0
           line-height: 38px
           font-size: 20px

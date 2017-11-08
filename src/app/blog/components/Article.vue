@@ -75,6 +75,7 @@
         <p>To provide a pretty error message for our custom validation rule, you should add:</p>
         <pre>"mod" => "Your input was invalid!",</pre>
         <p>to the first level of the array in <code>resources/lang/en/validation.php</code>.</p>
+        <hr>
         <p>You can see the whole code for this tutorial on GitHub. Or just the code for this tutorial here.</p>
         <p>Thank you for reading! Let me know if you have any other examples for this tutorial in the comments bellow.</p>
         <h2>Sources</h2>
@@ -172,8 +173,10 @@
     &__content
       width: 100%
       max-width: 800px
-      h2:first-child
+      *:first-child
         margin-top: 0
+      *:last-child
+        margin-bottom: 0
       h2
         margin: 50px 0 25px
         line-height: 35px
@@ -216,6 +219,13 @@
           font-family: 'Montserrat', sans-serif
           &:last-child
             margin-bottom: 0
+      hr
+        display: block
+        width: 100px
+        height: 1px
+        margin: 50px 0 50px
+        background-color: $line
+        border: none
     &__articles
       width: 100%
       max-width: 800px

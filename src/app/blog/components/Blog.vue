@@ -8,7 +8,7 @@
       </div>
       <div class="blog__articles">
         <div class="blog__articles-list">
-          <article-item v-for="(article, index) in articles.data" :article="article" :key="article.id" :index="index" :length="articles.data.length"></article-item>
+          <article-item v-for="(article, index) in articles.data" :article="article" :key="index" :index="index" :length="articles.data.length"></article-item>
           <a href="#" class="blog__articles-load">Load More</a>
         </div>
       </div>

@@ -86,7 +86,7 @@
       <div class="article__articles">
         <h2 class="article__articles-heading">Latest Posts</h2>
         <div class="article__articles-list">
-          <article-item v-for="(article, index) in articles" :article="article" :key="article.id" :index="index" :hasTeaser=false :length="articles.length"></article-item>
+          <article-item v-for="(article, index) in articles.data" :article="article" :key="index" :index="index" :length="articles.data.length" :hasTeaser=false></article-item>
         </div>
       </div>
     </div>
@@ -98,6 +98,8 @@
   import articleItem from './ArticleItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
+  import { mapActions, mapGetters } from 'vuex'
+
   export default {
     name: 'article',
     components: {
@@ -105,39 +107,18 @@
       articleItem,
       pageEnd
     },
-    data () {
-      return {
-        articles: [
-          {
-            'id': 1,
-            'title': 'How I structure my Vue.js projects',
-            'date': 'October 27, 2017',
-            'author': 'Joshua Gallagher',
-            'teaser': 'Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.'
-          },
-          {
-            'id': 2,
-            'title': 'Laravel Scout with Vue.js instant search',
-            'date': 'October 27, 2017',
-            'author': 'Joshua Gallagher',
-            'teaser': 'Nulla dictum maximus tortor ac tempor. In hac habitasse platea dictumst. Cras tempus congue dui. Suspendisse ac eros vitae turpis posuere rutrum. Etiam vel erat ante. Etiam in tellus nunc. Ut ut neque est. Etiam ullamcorper justo ut tellus fermentum, eget suscipit lectus viverra.'
-          },
-          {
-            'id': 3,
-            'title': 'Vue.js - How to Vuex',
-            'date': 'October 27, 2017',
-            'author': 'Joshua Gallagher',
-            'teaser': 'Ut vehicula, est ac venenatis aliquet, dui mauris euismod quam, in sollicitudin nunc nibh at eros. Phasellus tempor orci nec ligula fringilla consequat.'
-          },
-          {
-            'id': 4,
-            'title': 'Understanding OAuth 2.0',
-            'date': 'October 27, 2017',
-            'author': 'Joshua Gallagher',
-            'teaser': 'Sed venenatis, justo quis ornare egestas, velit augue lacinia orci, in vehicula risus ipsum vitae mi. Maecenas magna elit, mattis quis urna vitae, tempor tincidunt velit. Nam ornare nisl arcu. Mauris blandit in ante sit amet hendrerit.'
-          }
-        ]
-      }
+    mounted () {
+      this.getArticles()
+    },
+    computed: {
+      ...mapGetters({
+        articles: 'blog/articles'
+      })
+    },
+    methods: {
+      ...mapActions({
+        getArticles: 'blog/getArticles'
+      })
     }
   }
 </script>

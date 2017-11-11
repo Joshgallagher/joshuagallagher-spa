@@ -1,3 +1,5 @@
 export default {
-  articles: []
+  article: null,
+  articles: null,
+  meta: null
 }

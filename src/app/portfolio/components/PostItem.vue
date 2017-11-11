@@ -2,7 +2,7 @@
   <div class="post-item" v-bind:class="{ 'post-item--last' : index + 1 === length }">
     <div class="post-item__type">{{ post.created_at }}<span>·</span>By {{ post.user.data.name }}</div>
     <div class="post-item__head">
-      <a href="#" class="post-item__name">{{ post.title }}</a>
+      <router-link :to="{ name: 'article', params: { slug: post.slug } }" class="post-item__name">{{ post.title }}</router-link>
       <div class="post-item__tag post-item__tag">Blog Post</div>
     </div>
     <p class="post-item__info">{{ post.teaser }}</p>

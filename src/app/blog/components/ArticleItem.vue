@@ -1,7 +1,7 @@
 <template>
   <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length && hasTeaser === false }">
     <div class="article-item__type">{{ article.created_at }}<span>·</span>By {{ article.user.data.name }}</div>
-    <a href="#" class="article-item__title" v-bind:class="['article-item__title--' + getTitleColor(index), { 'article-item__title--last' : index + 1 === length && hasTeaser === false }]">{{ article.title }}</a>
+    <router-link :to="{ name: 'article', params: { slug: article.slug } }" class="article-item__title" v-bind:class="['article-item__title--' + getTitleColor(index), { 'article-item__title--last' : index + 1 === length && hasTeaser === false }]">{{ article.title }}</router-link>
     <p class="article-item__teaser" v-if="hasTeaser">{{ article.teaser }}</p>
   </div>
 </template>

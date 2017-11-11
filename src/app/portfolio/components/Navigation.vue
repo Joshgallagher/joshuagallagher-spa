@@ -5,7 +5,7 @@
         <logo></logo>
       </router-link>
       <div class="pnav__links">
-        <router-link :to="{ name: 'blog' }" class="button button--blue">blog</router-link>
+        <router-link :to="{ name: 'blog' }" class="button button--blue">Blog</router-link>
       </div>
     </div>
   </nav>

@@ -11,7 +11,7 @@ import portfolio from '@/app/portfolio/store'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
   actions,
   getters,
@@ -21,3 +21,5 @@ export default new Vuex.Store({
     portfolio
   }
 })
+
+export default store

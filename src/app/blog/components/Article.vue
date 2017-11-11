@@ -22,6 +22,7 @@
   import articleItem from './ArticleItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
+  import store from '../../../store'
   import { mapActions, mapGetters } from 'vuex'
 
   export default {
@@ -31,11 +32,11 @@
       articleItem,
       pageEnd
     },
+    beforeRouteEnter (to, from, next) {
+      store.dispatch('blog/getArticle', to.params.slug).then(() => next())
+    },
     mounted () {
       this.getArticles()
-    },
-    beforeRouteEnter (to, from, next) {
-      this.getArticle(this.$route.params.slug)
     },
     computed: {
       ...mapGetters({

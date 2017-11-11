@@ -33,7 +33,14 @@
       pageEnd
     },
     beforeRouteEnter (to, from, next) {
-      store.dispatch('blog/getArticle', to.params.slug).then(() => next())
+      store.dispatch('blog/getArticle', to.params.slug).then(() => {
+        next()
+      })
+    },
+    beforeRouteUpdate (to, from, next) {
+      store.dispatch('blog/getArticle', to.params.slug).then(() => {
+        next()
+      })
     },
     mounted () {
       this.getArticles()

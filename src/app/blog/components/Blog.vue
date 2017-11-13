@@ -9,7 +9,8 @@
       <div class="blog__articles">
         <div class="blog__articles-list">
           <article-item v-for="(article, index) in articles" :article="article" :key="index" :index="index" :length="articles.length"></article-item>
-          <a href="#" class="blog__articles-load" @click.prevent="load(meta)">Load More</a>
+          <a href="#" class="blog__articles-load" @click.prevent="load(meta)" v-if="meta.pagination.links.next">Load More</a>
+          <p class="blog__articles-load blog__articles-load--none" v-else>That's All For Now.</p>
         </div>
       </div>
     </div>
@@ -21,6 +22,7 @@
   import articleItem from './ArticleItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
+  import store from '../../../store'
   import { mapActions, mapGetters } from 'vuex'
 
   export default {
@@ -30,8 +32,15 @@
       articleItem,
       pageEnd
     },
-    mounted () {
-      this.getArticles(1)
+    beforeRouteEnter (to, from, next) {
+      store.dispatch('blog/getArticles').then(() => {
+        next()
+      })
+    },
+    beforeRouteUpdate (to, from, next) {
+      store.dispatch('blog/getArticles').then(() => {
+        next()
+      })
     },
     computed: {
       ...mapGetters({
@@ -101,4 +110,6 @@
       transition: 250ms color ease-in-out
       &:hover
         color: $blue
+    &__articles-load--none
+      pointer-events: none
 </style>

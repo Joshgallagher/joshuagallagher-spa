@@ -3,9 +3,7 @@
     <div class="project-item__type">{{ project.date }}<span>·</span>{{ project.platforms }}</div>
     <div class="project-item__head">
       <a href="#" class="project-item__name">{{ project.name }}</a>
-      <div class="project-item__tag project-item__tag--completed" v-if="project.status === 'Completed'">{{ project.status }}</div>
-      <div class="project-item__tag project-item__tag--ongoing" v-if="project.status === 'Ongoing'">{{ project.status }}</div>
-      <div class="project-item__tag project-item__tag--coming" v-else="">{{ project.status }}</div>
+      <div class="project-item__tag" v-bind:class="'project-item__tag--' + project.status.toLowerCase()">{{ project.status }}</div>
     </div>
     <p class="project-item__info">{{ project.about }}</p>
   </div>

@@ -10,7 +10,7 @@
       <div class="article__articles">
         <h2 class="article__articles-heading">Latest Posts</h2>
         <div class="article__articles-list">
-          <article-item v-for="(article, index) in articles" :article="article" :key="index" :index="index" :length="articles.length" :hasTeaser=false></article-item>
+          <article-item v-for="(article, index) in articles" :article="article" :key="index" :index="index" :length="articles.length" :hasTeaser="false"></article-item>
         </div>
       </div>
     </div>
@@ -63,6 +63,7 @@
   @import '~sass/main'
 
   .article
+    background-color: white
     &__wrapper
       display: flex
       align-items: center

@@ -28,7 +28,7 @@
   }
 </script>
 <style lang="sass">
-  @import '~sass/main'
+  @import '~sass/base/vars'
 
   .project-item
     display: flex
@@ -83,5 +83,29 @@
       line-height: 38px
       font-size: 20px
       font-weight: 300
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', sans-serif
+
+  @media screen and (max-width: 768px)
+    .project-item
+      margin-bottom: 30px
+      &--last
+        margin-bottom: 0 !important
+      &__head
+        align-items: flex-start
+        flex-direction: column
+      &__name
+        width: 100%
+        font-size: 25px
+        line-height: 33px
+        overflow: unset
+        white-space: unset
+        text-overflow: unset
+      &__tag
+        width: 100%
+        margin: 15px 0 0 0
+  @media screen and (max-width: 425px)
+    .project-item
+      &__info
+        font-size: 18px
+        line-height: 35px
 </style>

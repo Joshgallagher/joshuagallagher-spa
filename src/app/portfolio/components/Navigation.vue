@@ -21,14 +21,13 @@
   }
 </script>
 <style lang="sass">
-  @import '~sass/main'
+  @import '~sass/base/vars'
 
   .pnav
     display: flex
     justify-content: center
     width: 100%
-    height: 100px
-    padding: 0 50px
+    padding: 30px 50px
     background-color: white
     &__container
       display: flex
@@ -51,4 +50,14 @@
       margin: 0
       padding: 0
       list-style-type: none
+
+  @media screen and (max-width: 1024px)
+    .pnav
+      padding: 30px 50px
+  @media screen and (max-width: 768px)
+    .pnav
+      padding: 15px 35px
+  @media screen and (max-width: 425px)
+    .pnav
+      padding: 15px 35px
 </style>

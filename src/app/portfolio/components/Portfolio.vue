@@ -1,7 +1,6 @@
 <template>
   <div class="portfolio">
     <navigation></navigation>
-    <div class="portfolio__wrapper">
       <div class="portfolio__landing">
         <h1 class="portfolio__landing-heading">I build
           <a
@@ -28,7 +27,6 @@
           </a> about it.
         </h1>
       </div>
-    </div>
     <div class="portfolio__about">
       <div class="portfolio__about-image">
           <h2 class="portfolio__about-location">Birmingham, UK</h2>
@@ -53,7 +51,7 @@
       </div>
     </div>
     <div id="portfolio__projects" class="portfolio__projects">
-      <h2 class="portfolio__projects-heading">Here are some <span class="portfolio__projects-heading--highlight">projects</span> I have launched, am currently working on, or will be starting soon(ish).</h2>
+      <h2 class="portfolio__projects-heading">Here are some <span class="portfolio__projects-heading--highlight portfolio__projects-heading--italic">projects</span> I have launched, am currently working on, or will be starting soon(ish).</h2>
       <div class="portfolio__projects-list">
         <project-item v-for="(project, index) in projects.wip" :project="project" :key="project.id" :index="index" :length="projects.wip.length"></project-item>
       </div>
@@ -65,7 +63,7 @@
       </div>
     </div>
     <div id="portfolio__posts" class="portfolio__posts">
-      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight">blog</span> where I post tech guides and the occasional 'me' post.</h2>
+      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post tech guides and the occasional 'me' post.</h2>
       <div class="portfolio__posts-list">
         <post-item v-for="(post, index) in posts" :post="post" :key="post.id" :index="index" :length="posts.length"></post-item>
       </div>
@@ -142,20 +140,19 @@
   }
 </script>
 <style lang="sass">
-  @import '~sass/main'
+  @import '~sass/base/vars'
 
   .portfolio
-    &__wrapper
+    background-color: white
+    &__landing
       display: flex
       justify-content: center
-      flex-direction: column
+      align-items: center
       width: 100%
-      padding: 0 50px
-    &__landing
-      width: 100%
-      max-width: 800px
-      margin: 100px auto
+      padding: 100px 50px
     &__landing-heading
+      max-width: 800px
+      width: 100%
       margin: 0
       line-height: 85px
       color: $text
@@ -192,7 +189,7 @@
     &__about-text
       width: 100%
       max-width: 800px
-      margin: 100px auto 0
+      padding: 100px 0 0
     &__about-paragraph
       margin: 0 0 50px 0
       padding: 0
@@ -215,8 +212,7 @@
       align-items: center
       flex-direction: column
       width: 100%
-      margin: 100px 0
-      padding: 0 50px
+      padding: 100px 50px 0
     &__projects-heading
       width: 100%
       max-width: 800px
@@ -228,6 +224,8 @@
       font-family: 'Merriweather', serif
     &__projects-heading--highlight
       color: $blue
+    &__projects-heading--italic
+      font-style: italic
     &__projects-list
       width: 100%
       max-width: 800px
@@ -249,8 +247,7 @@
       align-items: center
       flex-direction: column
       width: 100%
-      margin: 100px 0
-      padding: 0 50px
+      padding: 100px 50px 0
     &__posts-heading
       width: 100%
       max-width: 800px
@@ -262,14 +259,15 @@
       font-family: 'Merriweather', serif
     &__posts-heading--highlight
       color: $blue
+    &__posts-heading--highlight
+      font-style: italic
     &__posts-list
       width: 100%
       max-width: 800px
     &__contact
       display: flex
       justify-content: center
-      margin: 100px 0
-      padding: 0 50px
+      padding: 100px 50px
     &__contact-heading
       width: 100%
       max-width: 800px
@@ -285,4 +283,75 @@
       transition: 250ms color ease-in-out
       &:hover
         color: $dblue
+
+    @media screen and (max-width: 1024px)
+      &__landing
+        padding: 50px 50px
+      &__landing-heading
+        line-height: 70px
+        font-size: 50px
+      &__about-location
+        line-height: 70px
+        font-size: 50px
+      &__about-text
+        padding-top: 50px
+      &__about-paragraph
+        font-size: 22px
+        line-height: 45px
+      &__projects
+        padding: 50px 35px
+      &__projects-heading
+        font-size: 30px
+        line-height: 45px
+      &__posts
+        padding: 0 35px
+      &__posts-heading
+        font-size: 30px
+        line-height: 45px
+      &__contact
+        padding: 50px 35px
+      &__contact-heading
+        font-size: 30px
+        line-height: 45px
+    @media screen and (max-width: 768px)
+      &__landing
+        padding: 50px 35px
+      &__landing-heading
+        font-size: 30px
+        line-height: 45px
+      &__about
+        padding: 50px 35px 0
+      &__about-image
+        height: 250px
+      &__about-location
+        line-height: 45px
+        font-size: 35px
+      &__about-paragraph
+        font-size: 20px
+        line-height: 38px
+      &__projects
+        padding: 35px 35px
+      &__about-paragraph
+        margin: 0 0 25px 0
+      &__projects-hr
+        margin: 50px 0
+    @media screen and (max-width: 425px)
+      &__landing
+        padding: 35px 35px
+      &__about
+        padding: 0 35px
+      &__about-image
+        height: 150px
+      &__about-location
+        line-height: 35px
+        font-size: 25px
+      &__about-text
+        padding-top: 35px
+      &__about-paragraph
+        font-size: 20px
+        line-height: 38px
+      &__projects
+        padding: 35px 35px
+      &__projects-heading
+        font-size: 28px
 </style>

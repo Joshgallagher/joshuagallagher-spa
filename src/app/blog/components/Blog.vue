@@ -63,6 +63,7 @@
   @import '~sass/main'
 
   .blog
+    background-color: white
     &__wrapper
       display: flex
       align-items: center

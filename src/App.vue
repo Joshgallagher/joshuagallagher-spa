@@ -15,4 +15,7 @@
 
   *
     box-sizing: border-box
+
+  body
+    background-color: $blue
 </style>

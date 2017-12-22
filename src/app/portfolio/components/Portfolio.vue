@@ -107,7 +107,7 @@
               'id': 2,
               'name': 'short.en',
               'status': 'Ongoing',
-              'date': 'November 2017',
+              'date': 'October 2017',
               'platforms': 'Website',
               'about': 'short.en is a URL shortner built with Lumen, Node.js and Vue.js. shot.en takes a URL specified by a user and returns a short version for use across the web. short.en stores all statistics associated with a URL - how many times it has been shortened, when it was first shortened and when it was last shortened. Upon completion of this project, short.en will be hosted through Heroku.'
             }

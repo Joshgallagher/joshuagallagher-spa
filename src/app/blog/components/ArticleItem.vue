@@ -1,7 +1,7 @@
 <template>
   <div class="article-item" v-bind:class="{ 'article-item--no-teaser' : hasTeaser === false, 'article-item--last' : index + 1 === length && hasTeaser === false }">
     <div class="article-item__type">{{ article.created_at }}<span>·</span>By {{ article.user.data.name }}</div>
-    <router-link :to="{ name: 'article', params: { slug: article.slug } }" class="article-item__title" v-bind:class="['article-item__title--' + getTitleColor(index), { 'article-item__title--last' : index + 1 === length && hasTeaser === false }]">{{ article.title }}</router-link>
+    <router-link :to="{ name: 'article', params: { slug: article.slug } }" class="article-item__title" v-bind:class="['article-item__title--' + getTitleColor(index), { 'article-item__title--no-teaser' : hasTeaser === false }, { 'article-item__title--last' : index + 1 === length && hasTeaser === false }]">{{ article.title }}</router-link>
     <p class="article-item__teaser" v-if="hasTeaser">{{ article.teaser }}</p>
   </div>
 </template>
@@ -41,7 +41,7 @@
   }
 </script>
 <style lang="sass">
-  @import '~sass/main'
+  @import '~sass/base/vars'
 
   .article-item
     display: flex
@@ -73,6 +73,8 @@
       white-space: nowrap
       text-overflow: ellipsis
       transition: 250ms color ease-in-out
+      &--no-teaser
+        margin: 20px 0
       &--last
         margin-bottom: 0
       &--blue
@@ -98,4 +100,30 @@
       font-size: 20px
       font-weight: 300
       font-family: 'Montserrat', sans-serif
+
+  @media screen and (max-width: 768px)
+    .article-item
+      margin-bottom: 30px
+      &--last
+        margin-bottom: 0 !important
+      &__head
+        align-items: flex-start
+        flex-direction: column
+      &__title
+        width: 100%
+        font-size: 25px
+        line-height: 33px
+        overflow: unset
+        white-space: unset
+        text-overflow: unset
+        &--no-teaser
+          margin: 20px 0 0
+      &__tag
+        width: 100%
+        margin: 15px 0 0 0
+  @media screen and (max-width: 425px)
+    .article-item
+      &__teaser
+        font-size: 18px
+        line-height: 35px
 </style>

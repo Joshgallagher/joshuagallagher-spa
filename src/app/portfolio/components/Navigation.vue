@@ -59,5 +59,5 @@
       padding: 15px 35px
   @media screen and (max-width: 425px)
     .pnav
-      padding: 15px 35px
+      padding: 15px 20px
 </style>

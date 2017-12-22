@@ -68,4 +68,7 @@
       &__links
         width: unset
         margin-bottom: 15px
+    @media screen and (max-width: 425px)
+      &__container
+        padding: 0 20px
 </style>

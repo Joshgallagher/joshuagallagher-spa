@@ -8,7 +8,7 @@
             class="portfolio__landing-heading--highlight"
             v-scroll-to="{
               el: '#portfolio__projects',
-              offset: -50,
+              offset: 0,
               easing: 'ease-in-out',
               duration: 800
             }">
@@ -19,7 +19,7 @@
             class="portfolio__landing-heading--highlight"
             v-scroll-to="{
               el: '#portfolio__posts',
-              offset: -50,
+              offset: 0,
               easing: 'ease-in-out',
               duration: 800
             }">
@@ -35,19 +35,7 @@
         <p class="portfolio__about-paragraph">I'm Joshua - a designer, developer and student who makes complex tasks simple & obvious.</p>
         <p class="portfolio__about-paragraph">For the last year I have been studying for my degree in BSc Computer Science @ <a href="http://www.aston.ac.uk/" class="portfolio__about-paragraph--highlight">Aston University</a> - achieving a 2:1 in my first year.</p>
         <p class="portfolio__about-paragraph">Over the past 8 years I have been learning, building & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
-        <p class="portfolio__about-paragraph">I will be available next year for a placement, so
-          <a
-            href="#"
-            class="portfolio__about-paragraph--highlight"
-            v-scroll-to="{
-              el: '#portfolio__contact',
-              offset: -50,
-              easing: 'ease-in-out',
-              duration: 800
-            }">
-            hire me
-          </a>… duh!
-        </p>
+        <p class="portfolio__about-paragraph">I am available for a permanent full time position or a 1 year placement in 2018/19. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & I'll get my CV over to you!</p>
       </div>
     </div>
     <div id="portfolio__projects" class="portfolio__projects">
@@ -55,15 +43,15 @@
       <div class="portfolio__projects-list">
         <project-item v-for="(project, index) in projects.wip" :project="project" :key="project.id" :index="index" :length="projects.wip.length"></project-item>
       </div>
-      <div class="portfolio__projects-hr">
+      <div class="portfolio__projects-hr" v-if="projects.coming.length > 0">
         <span></span>
       </div>
-      <div class="portfolio__projects-list portfolio__projects-list--starting-soon">
+      <div class="portfolio__projects-list portfolio__projects-list--starting-soon" v-if="projects.coming.length > 0">
         <project-item v-for="(project, index) in projects.coming" :project="project" :key="project.id" :index="index" :length="projects.coming.length"></project-item>
       </div>
     </div>
     <div id="portfolio__posts" class="portfolio__posts">
-      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post tech guides and the occasional 'me' post.</h2>
+      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post tech guides and the occasional rant.</h2>
       <div class="portfolio__posts-list">
         <post-item v-for="(post, index) in posts" :post="post" :key="post.id" :index="index" :length="posts.length"></post-item>
       </div>
@@ -113,27 +101,18 @@
               'status': 'Completed',
               'date': 'November 2017',
               'platforms': 'Website',
-              'about': 'I decided that my brand needed a revamp - in the direction of securing a placement. To achieve this, I built both a portfolio and blog combined into one. The idea was to show employers relevant information on myself, but also show that I am active in learning new technologies and progressing hrough my blog.'
+              'about': 'I decided that my personal brand needed a revamp - in the direction of securing a placement. To achieve this, I created both a portfolio and blog. The idea was to show employers relevant information about myself but, also show that I\'m active in learning new technologies and showcasing this through my blog.'
             },
             {
               'id': 2,
               'name': 'short.en',
               'status': 'Ongoing',
-              'date': 'October 2017',
+              'date': 'November 2017',
               'platforms': 'Website',
-              'about': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id quam pellentesque, dapibus velit quis, dapibus nulla. Suspendisse potenti. Morbi id odio eros. Dignissim at fermentum vitae, congue in est. Morbi elit enim, imperdiet vel'
+              'about': 'short.en is a URL shortner built with Lumen, Node.js and Vue.js. shot.en takes a URL specified by a user and returns a short version for use across the web. short.en stores all statistics associated with a URL - how many times it has been shortened, when it was first shortened and when it was last shortened. Upon completion of this project, short.en will be hosted through Heroku.'
             }
           ],
-          coming: [
-            {
-              'id': 1,
-              'name': 'meeu.co',
-              'status': 'Coming Soon',
-              'date': 'October 2017',
-              'platforms': 'Website | Android | iOS',
-              'about': 'Sed dapibus sapien vel tortor euismod, a vehicula ligula congue. Nunc tortor nisi, dignissim at fermentum vitae, congue in est. Morbi elit enim, imperdiet vel. Nulla id quam pellentesque, dapibus velit quis, dapibus nulla.'
-            }
-          ]
+          coming: []
         }
       }
     }
@@ -317,10 +296,10 @@
       &__landing
         padding: 50px 35px
       &__landing-heading
-        font-size: 30px
-        line-height: 45px
+        font-size: 40px
+        line-height: 55px
       &__about
-        padding: 50px 35px 0
+        padding: 0 35px
       &__about-image
         height: 250px
       &__about-location
@@ -335,11 +314,15 @@
         margin: 0 0 25px 0
       &__projects-hr
         margin: 50px 0
+    @media screen and (max-width: 490px)
+      &__landing-heading
+        font-size: 30px
+        line-height: 45px
     @media screen and (max-width: 425px)
       &__landing
-        padding: 35px 35px
+        padding: 35px 20px
       &__about
-        padding: 0 35px
+        padding: 0 20px
       &__about-image
         height: 150px
       &__about-location
@@ -351,7 +334,11 @@
         font-size: 20px
         line-height: 38px
       &__projects
-        padding: 35px 35px
+        padding: 35px 20px
       &__projects-heading
         font-size: 28px
+      &__posts
+        padding: 0 20px
+      &__contact
+        padding: 35px 20px
 </style>

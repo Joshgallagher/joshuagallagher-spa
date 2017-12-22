@@ -60,7 +60,7 @@
   }
 </script>
 <style lang="sass">
-  @import '~sass/main'
+  @import '~sass/base/vars'
 
   .article
     background-color: white
@@ -97,7 +97,7 @@
       *:last-child
         margin-bottom: 0
       h2
-        margin: 50px 0 25px
+        margin: 50px 0 0
         line-height: 35px
         text-decoration: none
         color: $text
@@ -113,7 +113,7 @@
         font-weight: 700
         font-family: Merriweather, serif
       p
-        margin: 0 0 25px 0
+        margin: 25px 0 25px 0
         line-height: 38px
         color: $text
         font-size: 20px
@@ -128,12 +128,20 @@
         transition: 250ms color ease-in-out
         &:hover
           color: $dblue
+      blockquote
+        padding: 10px 20px
+        padding-left: 30px
+        margin: 0 0 20px
+        font-style: italic
+        border-left: 4px solid $blue
       pre
         margin: 25px 0
         padding: 20px
         font-family: Menlo, Monaco, Consolas, "Courier New", monospace
         background-color: $bg
         border-radius: 3px
+        word-wrap: break-word
+        white-space: pre-wrap
         > code
           color: $text
           line-height: 28px
@@ -175,4 +183,54 @@
     &__articles-list
       width: 100%
       max-width: 800px
+
+    @media screen and (max-width: 1024px)
+      &__wrapper
+        padding: 0 50px
+      &__header
+        margin: 50px 0 35px
+      &__heading
+        line-height: 70px
+        font-size: 50px
+      &__content
+        > h3
+          margin: 35px 0 10px
+      &__articles
+        margin: 35px 0 50px
+      &__articles-heading
+        margin-bottom: 35px
+    @media screen and (max-width: 768px)
+      &__wrapper
+        padding: 0 35px
+      &__header
+        margin: 35px 0 35px
+      &__heading
+        font-size: 40px
+        line-height: 55px
+      &__content
+        > p
+          margin: 15px 0 15px
+      &__articles
+        margin: 20px 0 35px
+      &__articles-heading
+        font-size: 25px
+        line-height: 33px
+    @media screen and (max-width: 490px)
+      &__heading
+        font-size: 30px
+        line-height: 45px
+    @media screen and (max-width: 425px)
+      &__wrapper
+        padding: 0 20px
+      &__header
+        margin: 20px 0 35px
+      &__content
+        > h3
+          margin: 20px 0 10px
+      &__articles
+        margin: 20px 0 35px
+      &__articles-heading
+        margin-bottom: 20px
+      &__articles
+        margin: 20px 0 20px
 </style>

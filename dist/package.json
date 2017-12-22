@@ -1,0 +1,14 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "npm install express"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-history-api-fallback": "^1.5.0"
+  }
+}

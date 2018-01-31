@@ -2,7 +2,8 @@
   <div class="project-item" v-bind:class="{ 'project-item--last' : index + 1 === length }">
     <div class="project-item__type">{{ project.date }}<span>·</span>{{ project.platforms }}</div>
     <div class="project-item__head">
-      <a href="#" class="project-item__name">{{ project.name }}</a>
+      <a v-if="project.url != '#'" :href=project.url target="_blank" class="project-item__name">{{ project.name }}</a>
+      <h2 v-else class="project-item__name project-item__name--no-link">{{ project.name }}</h2>
       <div class="project-item__tag" v-bind:class="'project-item__tag--' + project.status.toLowerCase()">{{ project.status }}</div>
     </div>
     <p class="project-item__info">{{ project.about }}</p>
@@ -59,6 +60,9 @@
       transition: 250ms color ease-in-out
       &:hover
         color: $blue
+    &__name--no-link
+      &:hover
+        color: $text
     &__tag
       min-width: 100px
       margin-left: 20px

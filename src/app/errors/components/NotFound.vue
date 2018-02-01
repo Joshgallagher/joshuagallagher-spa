@@ -1,6 +1,6 @@
 <template>
   <div class="not-found">
-    <p>Not Found!</p>
+    <h2>Not Found!</h2>
   </div>
 </template>
 <script>
@@ -9,6 +9,8 @@
   }
 </script>
 <style lang="sass">
+  @import '~sass/base/vars'
+
   .not-found
     display: flex
     justify-content: center
@@ -16,4 +18,10 @@
     width: 100vw
     height: 100vh
     background-color: white
+    h2
+      line-height: 75px
+      color: $text
+      font-size: 60px
+      font-weight: 700
+      font-family: 'Merriweather', serif
 </style>

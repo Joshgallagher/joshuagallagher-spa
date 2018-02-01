@@ -1,5 +1,7 @@
 <template>
-  <p>Not Found!</p>
+  <div class="not-found">
+    <p>Not Found!</p>
+  </div>
 </template>
 <script>
   export default {
@@ -7,5 +9,11 @@
   }
 </script>
 <style lang="sass">
-
+  .not-found
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    background-color: white
 </style>

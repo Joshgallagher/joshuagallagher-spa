@@ -4,7 +4,7 @@ export const getArticleBySlug = (slug) => {
   return axios.get(`${process.env.API_URL}/articles/${slug}`)
 }
 
-export const getArticles = (page) => {
+export const getArticles = (page = 1) => {
   return axios.get(`${process.env.API_URL}/articles?page=${page}`)
 }
 

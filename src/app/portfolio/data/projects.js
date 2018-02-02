@@ -8,7 +8,7 @@ export default {
         'status': 'Completed',
         'date': 'January 2018',
         'platforms': 'Website',
-        'about': 'Stack is re-make of Ketchapp\'s iOS and Android game Stack. The motivation behind this project was sparked from my Computer Graphics module as University and wanting to experiment with graphics in the browser with JavaScript. The technologies used in this project are as follows: Webpack, three.js and GSAP.'
+        'about': 'Stack is re-make of Ketchapp\'s iOS and Android game Stack. The motivation behind this project was sparked from my Computer Graphics module at University and wanting to experiment with graphics in the browser. The technologies used in this project are as follows: Webpack, three.js and GSAP.'
       },
       {
         'id': 2,

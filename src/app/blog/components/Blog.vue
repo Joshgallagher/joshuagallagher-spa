@@ -18,11 +18,11 @@
   </div>
 </template>
 <script>
-  import navigation from './Navigation'
+  import navigation from '@/app/global/components/Navigation'
   import articleItem from './ArticleItem'
   import pageEnd from '@/app/global/components/PageEnd'
 
-  import store from '../../../store'
+  import store from '@/store'
   import { mapActions, mapGetters } from 'vuex'
 
   export default {
@@ -33,14 +33,12 @@
       pageEnd
     },
     beforeRouteEnter (to, from, next) {
-      store.dispatch('blog/getArticles').then(() => {
-        next()
-      })
+      store.dispatch('blog/getArticles')
+        .then(() => next())
     },
     beforeRouteUpdate (to, from, next) {
-      store.dispatch('blog/getArticles').then(() => {
-        next()
-      })
+      store.dispatch('blog/getArticles')
+        .then(() => next())
     },
     computed: {
       ...mapGetters({

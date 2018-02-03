@@ -33,8 +33,8 @@
       </div>
       <div class="portfolio__about-text">
         <p class="portfolio__about-paragraph">I'm Joshua - a designer, developer and student who makes complex tasks simple & obvious.</p>
-        <p class="portfolio__about-paragraph">For the last year I have been studying for my degree in BSc Computer Science @ <a href="http://www.aston.ac.uk/" class="portfolio__about-paragraph--highlight">Aston University</a> - achieving a 2:1 in my first year.</p>
-        <p class="portfolio__about-paragraph">Over the past 8 years I have been learning, building & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
+        <p class="portfolio__about-paragraph">Over the last year I have been studying for my degree in BSc Computer Science @ <a href="http://www.aston.ac.uk/" class="portfolio__about-paragraph--highlight">Aston University</a> - achieving a 2:1 in my first year.</p>
+        <p class="portfolio__about-paragraph">For the past 8 years I have been learning, building & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
         <p class="portfolio__about-paragraph">I am available for a permanent full time position or a 1 year placement in 2018/19. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & I'll get my CV over to you!</p>
       </div>
     </div>
@@ -63,7 +63,7 @@
   </div>
 </template>
 <script>
-  import navigation from './Navigation'
+  import navigation from '@/app/global/components/Navigation'
   import projectItem from './ProjectItem'
   import postItem from './PostItem'
   import pageEnd from '@/app/global/components/PageEnd'

@@ -8,7 +8,7 @@ export default {
         'status': 'Completed',
         'date': 'January 2018',
         'platforms': 'Website',
-        'about': 'Stack is re-make of Ketchapp\'s iOS and Android game Stack. The motivation behind this project was sparked from my Computer Graphics module at University and wanting to experiment with graphics in the browser. The technologies used in this project are as follows: Webpack, three.js and GSAP.'
+        'about': 'Stack is a re-make of Ketchapp\'s iOS and Android game Stack. The motivation behind this project was sparked from my Computer Graphics module at University and wanting to experiment with graphics in the browser. The technologies used in this project are as follows: Webpack, three.js and GSAP.'
       },
       {
         'id': 2,
@@ -22,11 +22,11 @@ export default {
       {
         'id': 3,
         'url': '#',
-        'name': 'short.en',
+        'name': 'Shorten',
         'status': 'Ongoing',
         'date': 'October 2017',
         'platforms': 'Website',
-        'about': 'short.en is a URL shortener built with Lumen, Node.js and Vue.js. short.en takes a URL specified by a user and returns a shortened version for use across the web. short.en stores all statistics associated with a URL - how many times it has been shortened, when it was first shortened and when it was last shortened. Upon completion of this project, short.en will be hosted through Heroku.'
+        'about': 'Shorten is a URL shortener, built with Lumen, Node.js and Vue.js. Shorten takes a URL specified by a user and returns a shortened version for use across the web. Shorten stores all stats associated with a URL, i.e - how many times it has been shortened, when it was first shortened and when it was last shortened. Upon completion of this project, Shorten will be hosted through Heroku.'
       }
     ],
     coming: []

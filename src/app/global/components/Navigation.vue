@@ -1,18 +1,24 @@
 <template>
-  <nav class="bnav">
-    <div class="bnav__container">
-      <router-link :to="{ name: 'blog' }" class="bnav__logo">
+  <nav class="nav">
+    <div class="nav__container">
+      <router-link v-if="this.$route.name === 'blog'" :to="{ name: 'blog' }" class="nav__logo">
         <logo></logo>
       </router-link>
-      <div class="bnav__links">
-        <router-link v-if="this.$route.name !== 'blog'" :to="{ name: 'blog' }" class="bnav__link">Posts</router-link>
-        <router-link :to="{ name: 'portfolio' }" class="button button--blue">Portfolio</router-link>
+      <router-link v-else :to="{ name: 'portfolio' }" class="nav__logo">
+        <logo></logo>
+      </router-link>
+      <div v-if="this.$route.name === 'blog' || this.$route.name === 'article' || this.$route.name === 'portfolio'" class="nav__links">
+        <div v-if="this.$route.name === 'blog' || this.$route.name === 'article'">
+          <router-link v-if="this.$route.name !== 'blog'" :to="{ name: 'blog' }" class="nav__link">Posts</router-link>
+          <router-link :to="{ name: 'portfolio' }" class="button button--blue">Portfolio</router-link>
+        </div>
+        <router-link v-else :to="{ name: 'blog' }" class="button button--blue">Blog</router-link>
       </div>
     </div>
   </nav>
 </template>
 <script>
-  import logo from '@/app/global/components/Logo'
+  import logo from './Logo'
 
   export default {
     name: 'navigation',
@@ -24,7 +30,7 @@
 <style lang="sass">
   @import '~sass/base/vars'
 
-  .bnav
+  .nav
     display: flex
     justify-content: center
     width: 100%
@@ -40,13 +46,13 @@
       display: flex
       justify-content: flex-start
       align-items: center
-      width: 50%
+      width: 25%
       height: 100%
     &__links
       display: flex
       align-items: center
       justify-content: flex-end
-      width: 50%
+      width: 75%
       height: 100%
       margin: 0
       padding: 0
@@ -63,14 +69,14 @@
         color: $blue
 
   @media screen and (max-width: 1024px)
-    .bnav
+    .nav
       padding: 30px 50px
   @media screen and (max-width: 768px)
-    .bnav
+    .nav
       padding: 15px 35px
       &__link
         margin-right: 35px
   @media screen and (max-width: 425px)
-    .bnav
+    .nav
       padding: 15px 20px
 </style>

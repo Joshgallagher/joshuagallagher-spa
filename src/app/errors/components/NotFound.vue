@@ -51,7 +51,7 @@
         &:last-child
           margin-bottom: 0
         a
-          text-decoration: none
+          text-decoration: underline
           color: $blue
           font-weight: 500
           transition: 250ms color ease-in-out

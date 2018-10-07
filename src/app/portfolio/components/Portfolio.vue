@@ -53,7 +53,14 @@
     <div id="portfolio__posts" class="portfolio__posts">
       <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post tech guides and the occasional rant.</h2>
       <div class="portfolio__posts-list">
-        <post-item v-for="(post, index) in posts" :post="post" :key="post.id" :index="index" :length="posts.length"></post-item>
+        <div v-if="posts == null ? true : false" class="portfolio__loading">Loading...</div>
+        <post-item v-else
+          v-for="(post, index) in posts"
+          :key="post.id"
+          :post="post"
+          :index="index"
+          :length="posts.length">
+        </post-item>
       </div>
     </div>
     <div id="portfolio__contact" class="portfolio__contact">
@@ -83,6 +90,12 @@
     mounted () {
       this.getPosts()
     },
+    data () {
+      return {
+        ...projectsData,
+        postsLoading: true
+      }
+    },
     computed: {
       ...mapGetters({
         posts: 'portfolio/posts'
@@ -92,11 +105,6 @@
       ...mapActions({
         getPosts: 'portfolio/getPosts'
       })
-    },
-    data () {
-      return {
-        ...projectsData
-      }
     }
   }
 </script>
@@ -225,6 +233,12 @@
     &__posts-list
       width: 100%
       max-width: 800px
+    &__loading
+      text-align: center
+      color: $text
+      font-size: 14px
+      font-weight: 400
+      font-family: Merriweather, serif
     &__contact
       display: flex
       justify-content: center

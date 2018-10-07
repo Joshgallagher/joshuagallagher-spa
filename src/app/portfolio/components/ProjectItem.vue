@@ -41,7 +41,7 @@
       color: $text
       font-size: 14px
       font-weight: 400
-      font-family: Merriweather, serif;
+      font-family: Merriweather, serif
       span
         margin: 0 10px
     &__head

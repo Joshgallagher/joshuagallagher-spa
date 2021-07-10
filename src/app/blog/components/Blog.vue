@@ -64,6 +64,7 @@
   .blog
     background-color: white
     &__wrapper
+      height: calc(100vh - 175px)
       display: flex
       align-items: center
       flex-direction: column

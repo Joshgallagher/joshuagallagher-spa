@@ -34,7 +34,7 @@
       <div class="portfolio__about-text">
         <p class="portfolio__about-paragraph">I'm Joshua, a software engineer who makes complex tasks simple & obvious.</p>
         <p class="portfolio__about-paragraph">Over the last decade I have been building with & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
-        <p class="portfolio__about-paragraph">I am available for contract work. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & I'll get my CV over to you!</p>
+        <p class="portfolio__about-paragraph">I am available for contract work. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & we can get to work!</p>
       </div>
     </div>
     <div id="portfolio__projects" class="portfolio__projects">
@@ -53,18 +53,18 @@
       <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post something once in a blue moon.</h2>
       <div class="portfolio__posts-list">
         <!-- <div v-if="posts == null ? true : false" class="portfolio__loading">Loading...</div> -->
-        <div v-if="posts.length === 0" class="portfolio__loading">Whoops. Nothing posted yet.</div>
-        <post-item v-else
+        <div class="portfolio__loading">Whoops. Nothing posted yet.</div>
+        <!-- <post-item v-else
           v-for="(post, index) in posts"
           :key="post.id"
           :post="post"
           :index="index"
           :length="posts.length">
-        </post-item>
+        </post-item> -->
       </div>
     </div>
     <div id="portfolio__contact" class="portfolio__contact">
-      <h2 class="portfolio__contact-heading">Have an idea? Want to work together? <a href="mailto:hello@joshuagallagher.io" class="portfolio__contact-heading--highlight">Mail me!</a></h2>
+      <h2 class="portfolio__contact-heading">Have an idea? Need a Software Engineer? Want to work together? <a href="mailto:hello@joshuagallagher.io" class="portfolio__contact-heading--highlight">Mail me!</a></h2>
     </div>
     <page-end></page-end>
   </div>

@@ -12,7 +12,7 @@
               easing: 'ease-in-out',
               duration: 800
             }">
-            cool things
+            things
           </a> on the web, and
           <a
             href="#"
@@ -32,10 +32,9 @@
           <h2 class="portfolio__about-location">Birmingham, UK</h2>
       </div>
       <div class="portfolio__about-text">
-        <p class="portfolio__about-paragraph">I'm Joshua - a designer, developer and student who makes complex tasks simple & obvious.</p>
-        <p class="portfolio__about-paragraph">Over the last year I have been studying for my degree in BSc Computer Science @ <a href="http://www.aston.ac.uk/" class="portfolio__about-paragraph--highlight">Aston University</a> - achieving a 2:1 in my first year.</p>
-        <p class="portfolio__about-paragraph">For the past 8 years I have been learning, building & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
-        <p class="portfolio__about-paragraph">I am available for a permanent full time position or a 1 year placement in 2018/19. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & I'll get my CV over to you!</p>
+        <p class="portfolio__about-paragraph">I'm Joshua, a software engineer who makes complex tasks simple & obvious.</p>
+        <p class="portfolio__about-paragraph">Over the last decade I have been building with & exploring new web technologies. I am proficient in Java, PHP, JS & SQL - I like to build things with Laravel, Lumen and Vue.js!</p>
+        <p class="portfolio__about-paragraph">I am available for contract work. If you're interested, send me an <a href="mailto:hello@joshuagallagher.io" class="portfolio__about-paragraph--highlight">email</a> & I'll get my CV over to you!</p>
       </div>
     </div>
     <div id="portfolio__projects" class="portfolio__projects">
@@ -51,9 +50,10 @@
       </div>
     </div>
     <div id="portfolio__posts" class="portfolio__posts">
-      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post tech guides and the occasional rant.</h2>
+      <h2 class="portfolio__posts-heading">Check out my <span class="portfolio__posts-heading--highlight portfolio__posts-heading--italic">blog</span> where I post something once in a blue moon.</h2>
       <div class="portfolio__posts-list">
-        <div v-if="posts == null ? true : false" class="portfolio__loading">Loading...</div>
+        <!-- <div v-if="posts == null ? true : false" class="portfolio__loading">Loading...</div> -->
+        <div v-if="posts.length === 0" class="portfolio__loading">Whoops. Nothing posted yet.</div>
         <post-item v-else
           v-for="(post, index) in posts"
           :key="post.id"
@@ -64,7 +64,7 @@
       </div>
     </div>
     <div id="portfolio__contact" class="portfolio__contact">
-      <h2 class="portfolio__contact-heading">Have a placement available next year? Want to work together? <a href="mailto:hello@joshuagallagher.io" class="portfolio__contact-heading--highlight">Mail me!</a></h2>
+      <h2 class="portfolio__contact-heading">Have an idea? Want to work together? <a href="mailto:hello@joshuagallagher.io" class="portfolio__contact-heading--highlight">Mail me!</a></h2>
     </div>
     <page-end></page-end>
   </div>

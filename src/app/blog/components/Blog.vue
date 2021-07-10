@@ -4,13 +4,14 @@
     <div class="blog__wrapper">
       <div class="blog__welcome">
         <h1 class="blog__welcome-heading">Hello, World!</h1>
-        <p class="blog__welcome-text">On this blog, you will find many different tutorials on web technologies. Most of the guides will cover Laravel, Lumen, Vue.js and related technologies. However, now and then I will dabble in some Java and software development principles.</p>
+        <p class="blog__welcome-text">Software engineering blog focused on sharing solved problems.</p>
       </div>
       <div class="blog__articles">
         <div class="blog__articles-list">
-          <article-item v-for="(article, index) in articles" :article="article" :key="index" :index="index" :length="articles.length"></article-item>
-          <a href="#" class="blog__articles-load" @click.prevent="load(meta)" v-if="meta.pagination.links.next">Load More</a>
-          <p class="blog__articles-load blog__articles-load--none" v-else>That's All For Now.</p>
+          <!-- <article-item v-for="(article, index) in articles" :article="article" :key="index" :index="index" :length="articles.length"></article-item>
+          <a href="#" class="blog__articles-load" @click.prevent="load(meta)" v-if="meta.pagination.links.next">Load More</a> -->
+          <!-- <p class="blog__articles-load blog__articles-load--none" v-else>That's All For Now.</p> -->
+          <p class="blog__articles-load blog__articles-load--none">Whoops. Nothing posted yet.</p>
         </div>
       </div>
     </div>
